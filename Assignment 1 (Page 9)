@@ -1,0 +1,5 @@
+#Page 9, Your Turn
+import pandas as pd
+Location = r"C:\Users\kparker\Downloads\AGS01.xls"
+df = pd.read_excel(Location)
+df.head()
