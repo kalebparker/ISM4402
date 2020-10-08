@@ -1,0 +1,8 @@
+#Page 39, Your Turn
+import pandas as pd
+import numpy as np
+Location = r"C:\Users\kparker\Downloads\gradedata.csv" 
+df = pd.read_csv(Location) 
+df.head()
+df['timemgmt'] = np.where((df['exercise'] > 3) & (df['hours'] > 17), 'Yes','No')
+df
