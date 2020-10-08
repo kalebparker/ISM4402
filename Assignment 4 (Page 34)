@@ -1,0 +1,9 @@
+#Page 34, Your Turn
+import pandas as pd
+Location = r"C:\Users\kparker\Downloads\gradedata.csv" 
+df = pd.read_csv(Location) 
+df.head()
+bins = [0, 70, 100]
+group_names = ['Fail', 'Pass']
+df['FinalLetterGrade'] = pd.cut(df['grade'], bins, labels=group_names)
+df
