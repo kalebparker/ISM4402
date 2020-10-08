@@ -1,0 +1,6 @@
+#Page 7, Your Turn
+import pandas as pd
+Location = r"C:\Users\kparker\Downloads\all_040_in_02.P2.csv"
+# I had to add an "r" infront of the location variable inorder to deal with an error described here: "https://stackoverflow.com/questions/1347791/unicode-error-unicodeescape-codec-cant-decode-bytes-cannot-open-text-file"
+df = pd.read_csv(Location)
+df.head()
