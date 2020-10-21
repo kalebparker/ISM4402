@@ -1,0 +1,11 @@
+#Page 63, Your Turn
+import pandas as pd
+Location = r"C:\Users\kparker\Downloads\gradedata.csv"
+df = pd.read_csv(Location)
+df.head()
+import statsmodels.formula.api as sm
+result = sm.ols(
+formula='grade ~ age + exercise + hours + gender',
+#It seems that by adding it the formula understnads that gender is a value... But I'm not sure if there was a way you wanted us to do this more specifically.
+data=df).fit()
+result.summary()
