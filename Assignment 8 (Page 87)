@@ -1,0 +1,12 @@
+#Page 87, Your Turn
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+Location = r"C:\Users\kparker\Downloads\gradedata.csv" 
+df = pd.read_csv(Location)
+plt.scatter(df['grade'], df['hours'])
+plt.xlabel('Grades')
+plt.ylabel('Hours')
+plt.title('Grade Data vs Hours')
+#Looks like a pretty clear indication that the more hours spent working the better grade you get, who would have thought lol.
