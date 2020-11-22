@@ -1,33 +1,24 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+%matplotlib inline
+Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
+df = pd.read_csv(Location)
+df.head()
+
 #1. Average cars sold per month
 def mean():
-    import pandas as pd
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
     print("1. Average cars sold per month:",df['Cars Sold'].mean())
 
 #2. Max cars sold per month
 def max():
-    import pandas as pd
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
     print("2. Max cars sold per month:",df['Cars Sold'].max())
 
 #3. Min cars sold per month
 def min():
-    import pandas as pd
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
     print("3. Min cars sold per month:",df['Cars Sold'].min())
 
 #4. Average cars sold per month by gender
 def gender():
-    import pandas as pd
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
     print("4. Average cars sold per month by gender:")
     print(pd.pivot_table(df,
     index=['Gender'],
@@ -36,36 +27,20 @@ def gender():
 
 #5. Average hours worked by people selling more than three cars per month
 def hardworkrs():
-    import pandas as pd
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
     df2 = df.loc[df['Cars Sold'] >= 3]
     print("5. Average hours worked by people selling more than three cars per month:",df2['Hours Worked'].mean())
 
 #6. Average years of experience
 def experience():
-    import pandas as pd
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
     print("6. Average years of experience:",df['Years Experience'].mean())
 
 #7. Average years of experience for people selling more than three cars per month
 def loyalworkers():
-    import pandas as pd
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
     df2 = df.loc[df['Cars Sold'] >= 3]
     print("7. Average years of experience for people selling more than three cars per month:",df2['Years Experience'].mean())
 
 #8. Average cars sold per month sorted by whether they have had sales training
 def trainedworkers():
-    import pandas as pd
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
     print("8. Average cars sold per month sorted by whether they have had sales training:")
     print(pd.pivot_table(df,
     index=['SalesTraining'],
@@ -73,22 +48,10 @@ def trainedworkers():
     values=['Cars Sold']))
 
 def gendersales():
-    import matplotlib.pyplot as plt
-    import pandas as pd
-    %matplotlib inline
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
-    print(df.hist(column="Cars Sold", by="Gender"))
+    df.hist(column="Cars Sold", by="Gender")
     
 def salestraining():
-    import matplotlib.pyplot as plt
-    import pandas as pd
-    %matplotlib inline
-    Location = r"C:\Users\kparker\Desktop\axisdata.csv" 
-    df = pd.read_csv(Location)
-    df.head()
-    print(df.hist(column="SalesTraining", by="Gender"))
+    df.hist(column="SalesTraining", by="Gender")
 
 #Please forgive all the prints in the middle of these functions, it's just to provide spacing to make it a little eaiser on the eyes.
 mean()
