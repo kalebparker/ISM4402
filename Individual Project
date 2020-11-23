@@ -46,7 +46,8 @@ def trainedworkers():
     index=['SalesTraining'],
     aggfunc='mean',
     values=['Cars Sold']))
-
+    
+#Comparison of sales figures by men and women to people with sales training
 def gendersales():
     df.hist(column="Cars Sold", by="Gender")
     
@@ -73,3 +74,5 @@ print()
 gendersales()
 print()
 salestraining()
+print()
+gendertraining()
